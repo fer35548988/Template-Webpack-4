@@ -155,6 +155,21 @@ module.exports = {
     devServer:{ 
         open: true, //PARA QUE AL INICIARSE EL DEV SERVER SE ABRA EN EL NAVEGADOR
         port: 9090, //MODIFICANDO EL PUERTO
-    }
+    },
+
+    /*
+        SECCIÓN DE OPTIMIZACIÓN
+    */
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    name: 'commons',
+                    chunks: 'initial',
+                    minChunks: 2
+                }
+            }
+        }
+    },
 }
 
